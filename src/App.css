@@ -1,4 +1,4 @@
-.App {
+/*.App {
   text-align: center;
 }
 
@@ -34,5 +34,117 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+.student-card {
+  border: 1px solid black;
+  width: 250px;
+  margin:5px;
+  border-radius: 10px;
+}
+
+.card-block{
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 12px;
+}
+
+.btn {
+  padding : 7px;
+  margin : 5px;
+  border:none;
+  border-radius: 10px;
+  font-size: larger;
+}
+.btn:hover{
+  color: #fff;
+  cursor: pointer;
+}
+.accept-btn{
+  background-color: green;
+}
+
+.reject-btn{
+  background-color: crimson;
+}*/
+
+section.pricing {
+  background: hsl(240, 2%, 10%);
+  background: linear-gradient(to left, #c0d0ec, #1998ed);
+}
+
+.pricing .card {
+  color: #000;
+  border: 1px solid black;
+  border-radius: 1rem;
+  width: 300px;
+  flex-wrap:wrap;
+  padding: 50px;
+  margin: 20px ;
+  text-align: center;
+  transition: all 0.2s;
+  box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
+}
+
+.row{
+  display: flex;
+  flex: 100%;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.pricing hr {
+  margin: 1.5rem 0;
+}
+
+.pricing .card-title {
+  color: #000;
+  margin: 0.5rem 0;
+  font-size: 0.9rem;
+  letter-spacing: .1rem;
+  font-weight: bold;
+}
+
+.pricing .card-price {
+  font-size: 4rem;
+  margin: 0;
+}
+
+.pricing .card-price .period {
+  font-size: 0.8rem;
+}
+
+.pricing ul li {
+  margin-bottom: 1rem;
+}
+
+.pricing .text-muted {
+  opacity: 0.7;
+}
+
+.pricing .btn {
+  font-size: 80%;
+  border-radius: 5rem;
+  letter-spacing: .1rem;
+  font-weight: bold;
+  padding: 1rem;
+  opacity: 0.7;
+  transition: all 0.2s;
+}
+
+/* Hover Effects on Card */
+
+@media (min-width: 992px) {
+  .pricing .card:hover {
+    margin-top: -.25rem;
+    margin-bottom: .25rem;
+    box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.3);
+  }
+  .pricing .card:hover .btn {
+    opacity: 1;
   }
 }
