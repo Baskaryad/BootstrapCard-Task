@@ -23,10 +23,7 @@ export default function Dashboard({data, setData}){
 
     return (
         <Base>
-            <StudentCard
-            data={data}
-            setData={setData}
-            />
+            <div>Dashboard</div>
         </Base>
     )
 }
