@@ -1,12 +1,14 @@
 
+
 import './App.css';
 import React, { useState } from 'react';
-import TopBar from './Components/TopBar';
-import Base from './BasePage/Base';
 import Dashboard from './Pages/Dashboard';
 import Profile from './Pages/Profile';
 import StudentList from './Components/StudentList';
 import { Routes, Route } from 'react-router-dom';
+import AddStudents from './Components/AddStudents';
+import EditStudent from './Components/EditStudent';
+import NoPage from './Pages/Nopage';
 
 
 function App() {
@@ -43,12 +45,30 @@ const [data, setData] = useState(studentData)
   path="/profile" element={<Profile/>}
   />
 
+  <Route
+  path="/student/add" element={<AddStudents
+    studentData={data}
+    setData ={setData}
+  />}
+  />
+    <Route
+  path="/edit/:id" element={<EditStudent
+    studentData={data}
+    setData ={setData}
+  />}
+  />
+
   <Route path="/student/all" element={
     <StudentList 
     studentData={data}
     setData ={setData}
     />}/>
+
+<Route
+path="*" element={<NoPage/>}>
+</Route>
 </Routes>
+
 
 </div>
   ); 
@@ -58,4 +78,9 @@ const [data, setData] = useState(studentData)
 export default App;
 
 
+
+
+
+// useState() - day1
+// useEffect() -
 

@@ -1,13 +1,15 @@
-export default function StudentCard({student, studentData, setData}){
+import { useNavigate } from "react-router-dom";
 
+export default function StudentCard({student, studentData, setData}){
+const navigate = useNavigate()
     const removeStudent = (id)=>{
         //api operations
      const newStudentData = studentData.filter((stud)=>stud.id !== id);
      setData(newStudentData)
     }
     return (
-        <div>
-    <div className="card w-96 bg-base-100 shadow-xl">
+     
+    <div className="card w-96 bg-base-100 shadow-xl m-2">
     <div className="card-body">
           <h2 className="card-title">{student.name}</h2>
            <p>Batch: {student.batch}</p>
@@ -18,10 +20,15 @@ export default function StudentCard({student, studentData, setData}){
         <button className="btn btn-danger"
         onClick={()=>removeStudent(student.id)}
         >Delete</button>
+
+     <button className="btn btn-primary"
+        onClick={()=>navigate(`/edit/${student.id}`)}
+        >Edit</button>
+        
          </div>
        </div>
        </div>
-        </div>
+   
     )
 
 }
