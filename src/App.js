@@ -1,5 +1,4 @@
 
-
 import './App.css';
 import React, { useState } from 'react';
 import Dashboard from './Pages/Dashboard';
@@ -32,9 +31,14 @@ const studentData = [
       qualification: "B.Tech"
      },
 ]
-
+const pages = [
+  {
+    name : "students",
+    path : "/student/all"
+  }
+]
 const [data, setData] = useState(studentData)
-
+const [crumState, setCrumState] = useState(pages)
   return (
 <div className="App">
 
@@ -55,6 +59,8 @@ const [data, setData] = useState(studentData)
   path="/edit/:id" element={<EditStudent
     studentData={data}
     setData ={setData}
+    crumState ={crumState}
+    setCrumState ={setCrumState}
   />}
   />
 
@@ -62,6 +68,8 @@ const [data, setData] = useState(studentData)
     <StudentList 
     studentData={data}
     setData ={setData}
+    crumState ={crumState}
+    setCrumState ={setCrumState}
     />}/>
 
 <Route
