@@ -2,9 +2,10 @@ import { useEffect, useState } from "react";
 import Base from "../BasePage/Base";
 import { useNavigate, useParams } from "react-router-dom";
 import CrumBar from "./CrumBar";
+import { AppState } from "../Context/AppProvider";
 
-export default function EditStudent({ studentData, setData, crumState, setCrumState }) {
-
+export default function EditStudent() {
+    const {studentData, setData} = AppState()
     const navigate = useNavigate()
 
     const { id } = useParams();
@@ -48,10 +49,7 @@ export default function EditStudent({ studentData, setData, crumState, setCrumSt
 
     return (
         <Base>
-         <CrumBar 
-            crumState ={crumState}
-            setCrumState ={setCrumState}
-        />
+         <CrumBar/>
             <div className="p-5">Please Fill the form to add Edit Student</div>
             <div className="form-control">
                 <label className="input-group input-group-md  m-2">

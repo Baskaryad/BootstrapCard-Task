@@ -1,7 +1,8 @@
-import { Link, useNavigate } from "react-router-dom"
+import { Link} from "react-router-dom"
+import { AppState } from "../Context/AppProvider";
 
-export default function CrumBar({crumState, setCrumState}){
-
+export default function CrumBar(){
+  const {crumState, setCrumState} = AppState()
     function removeRemaining(id){
         let removalValue = +id +1;
         let newCrumState = crumState.slice(0, removalValue)

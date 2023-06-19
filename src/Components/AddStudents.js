@@ -1,8 +1,9 @@
 import { useState } from "react";
 import Base from "../BasePage/Base";
+import { AppState } from "../Context/AppProvider";
 
-
-export default function AddStudents({studentData, setData}) {
+export default function AddStudents() {
+    const {studentData, setData} = AppState()
     const [id, setId] = useState("");
     const [name, setName] = useState("");
     const [batch, setBatch] = useState("");
@@ -12,7 +13,7 @@ export default function AddStudents({studentData, setData}) {
     //setId(value) => id
     function addnewStudent(){
       const newStudentObj = {
-        id, 
+        id : parseInt(id), 
         name, 
         batch, 
         email, 
