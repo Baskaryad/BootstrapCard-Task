@@ -1,30 +1,11 @@
-import React, { createContext, useState, useContext } from 'react';
+import React, { createContext, useState, useContext, useEffect} from 'react';
+import  {API}  from '../API/api';
 
 // step 1
 const AppCtx = createContext();
 
 function AppProvider({children}){
-    // step 2: create provider & subscriber modeel
-    // student data
-    const database = [
-        {
-         id: 1,
-         name : "Kishore",
-         batch: "b47WD",
-         email: "abc@gmail.com",
-         phone: 782465244,
-         qualification: "B.E"
-        },
-        {
-         id: 2,
-         name : "Aditiya",
-         batch: "b47WD",
-         email: "adc@gmail.com",
-         phone: 652664624,
-         qualification: "B.Tech"
-        },
-   ]
-   // database for pages
+  // database for pages
   const pages = [
     {
       name: "students",
@@ -32,9 +13,25 @@ function AppProvider({children}){
     },
   ];
 
+    // step 2: create provider & subscriber modeel
    // declaring states
-   const [studentData, setData] = useState(database);
+   const [studentData, setData] = useState([]);
    const [crumState, setCrumState] = useState(pages);
+
+   useEffect(()=>{
+    const getAllStudents = async()=>{
+      const response = await fetch(API,{
+        method:"GET"
+      });
+      console.log(response);
+      const data = await response.json();
+      console.log("data consoled", data);
+      setData(data)
+    }
+    getAllStudents();
+   }, [])
+
+
    return(
     <AppCtx.Provider
     value={{
