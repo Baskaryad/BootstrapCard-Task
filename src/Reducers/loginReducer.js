@@ -1,7 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 
-
 const loginSlice = createSlice({
     name : "loginInfo",
     initialState : {
@@ -16,6 +15,7 @@ const loginSlice = createSlice({
         }, 
         logoutUser : (state, action)=>{
             state.data = {username:"", password:""}
+            localStorage.removeItem("username");
         }
     }
 })

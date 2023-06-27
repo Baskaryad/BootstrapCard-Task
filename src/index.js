@@ -8,12 +8,12 @@ import AppProvider from './Context/AppProvider';
 import { configureStore } from '@reduxjs/toolkit';
 import { Provider } from 'react-redux';
 import loginReducer from './Reducers/loginReducer';
-
+import signupReducer from './Reducers/signupReducer';
 
 const store = configureStore({
   reducer : {
     loginInfo:loginReducer,
-    signupInfo: {},
+    signupInfo: signupReducer,
   }
 })
 

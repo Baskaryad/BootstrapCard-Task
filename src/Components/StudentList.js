@@ -29,7 +29,9 @@ function StudentList(){
             
 <div className="join">
 <button
-         onClick={()=>setPage(currentPage-1)}
+         onClick={()=>
+          currentPage >1 ? setPage(currentPage-1) : ""
+        }
          className={`join-item btn btn-md `}>prev
          </button>  
   {
@@ -44,7 +46,9 @@ function StudentList(){
     ))
   }
 <button
-         onClick={()=>setPage(currentPage+1)}
+         onClick={()=>
+          currentPage < Math.ceil((studentData.length/2)) 
+          ? setPage(currentPage+1) : ""}
          className={`join-item btn btn-md `}>next
          </button>  
 </div>
