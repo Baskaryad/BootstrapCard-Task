@@ -7,10 +7,12 @@ import { Routes, Route } from 'react-router-dom';
 import AddStudents from './Components/AddStudents';
 import EditStudent from './Components/EditStudent';
 import NoPage from './Pages/Nopage';
+import { AppState } from "./Context/AppProvider";
+import { API } from "./API/api";
 
 function App() {
   return (
-<div className="App">
+<div className="App" data-theme="dark">
 <Routes>
   <Route exact path="/" element={<Dashboard/>}/>
 
@@ -29,3 +31,10 @@ function App() {
 }
 
 export default App;
+
+
+
+// CREATE - POST - ADD
+// READ   - GET - Esisting data
+// UPDATE - PUT - data update, add 
+// DELETE - DELETE - Delete a data 
